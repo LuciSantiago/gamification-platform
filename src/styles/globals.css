@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ==================== COLORS ==================== */
+    
+    /* Primary - Indigo Elétrico */
+    --primary-900: #312E81;
+    --primary-800: #3730A3;
+    --primary-700: #4338CA;
+    --primary-600: #4F46E5;
+    --primary-500: #6366F1;
+    --primary-400: #818CF8;
+    --primary-300: #A5B4FC;
+    --primary-200: #C7D2FE;
+    --primary-100: #E0E7FF;
+    --primary-50: #EEF2FF;
+
+    /* Secondary - Amber Energy */
+    --secondary-900: #78350F;
+    --secondary-800: #92400E;
+    --secondary-700: #B45309;
+    --secondary-600: #D97706;
+    --secondary-500: #F59E0B;
+    --secondary-400: #FBBF24;
+    --secondary-300: #FCD34D;
+    --secondary-200: #FDE68A;
+    --secondary-100: #FEF3C7;
+    --secondary-50: #FFFBEB;
+
+    /* Success - Emerald Fresh */
+    --success-900: #064E3B;
+    --success-800: #065F46;
+    --success-700: #047857;
+    --success-600: #059669;
+    --success-500: #10B981;
+    --success-400: #34D399;
+    --success-300: #6EE7B7;
+    --success-200: #A7F3D0;
+    --success-100: #D1FAE5;
+    --success-50: #ECFDF5;
+
+    /* Warning - Orange Alert */
+    --warning-900: #7C2D12;
+    --warning-800: #9A3412;
+    --warning-700: #C2410C;
+    --warning-600: #EA580C;
+    --warning-500: #F97316;
+    --warning-400: #FB923C;
+    --warning-300: #FDBA74;
+    --warning-200: #FED7AA;
+    --warning-100: #FFEDD5;
+    --warning-50: #FFF7ED;
+
+    /* Error - Rose Critical */
+    --error-900: #881337;
+    --error-800: #9F1239;
+    --error-700: #BE123C;
+    --error-600: #E11D48;
+    --error-500: #F43F5E;
+    --error-400: #FB7185;
+    --error-300: #FDA4AF;
+    --error-200: #FECDD3;
+    --error-100: #FFE4E6;
+    --error-50: #FFF1F2;
+
+    /* Neutrals */
+    --gray-950: #0F0F1E;
+    --gray-900: #18181F;
+    --gray-800: #27272E;
+    --gray-700: #3F3F4D;
+    --gray-600: #52525F;
+    --gray-500: #71717A;
+    --gray-400: #A1A1AA;
+    --gray-300: #D4D4D8;
+    --gray-200: #E4E4E7;
+    --gray-100: #F4F4F5;
+    --gray-50: #FAFAFA;
+
+    --white: #FFFFFF;
+    --black: #09090B;
+
+    /* Quest Types */
+    --quest-video: #EC4899;
+    --quest-reading: #8B5CF6;
+    --quest-audio: #14B8A6;
+    --quest-practice: #F59E0B;
+    --quest-social: #3B82F6;
+
+    /* Level Tiers */
+    --level-bronze: #CD7F32;
+    --level-silver: #C0C0C0;
+    --level-gold: #FFD700;
+    --level-platinum: #E5E4E2;
+    --level-diamond: #B9F2FF;
+
+    /* ==================== SPACING ==================== */
+    --space-0: 0;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --space-20: 80px;
+    --space-24: 96px;
+
+    /* ==================== BORDER RADIUS ==================== */
+    --radius-none: 0;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+
+    /* ==================== SHADOWS ==================== */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16), 0 8px 16px rgba(0, 0, 0, 0.08);
+    --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.20), 0 12px 24px rgba(0, 0, 0, 0.10);
+    --shadow-primary: 0 8px 20px rgba(79, 70, 229, 0.24);
+    --shadow-success: 0 8px 20px rgba(16, 185, 129, 0.24);
+    --shadow-warning: 0 8px 20px rgba(245, 158, 11, 0.24);
+
+    /* ==================== ANIMATIONS ==================== */
+    --duration-instant: 100ms;
+    --duration-fast: 200ms;
+    --duration-base: 300ms;
+    --duration-slow: 500ms;
+    --duration-slower: 700ms;
+
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* ==================== ICON SIZES ==================== */
+    --icon-xs: 16px;
+    --icon-sm: 20px;
+    --icon-md: 24px;
+    --icon-lg: 32px;
+    --icon-xl: 40px;
+    --icon-2xl: 48px;
+
+    /* ==================== CONTAINER SIZES ==================== */
+    --container-xs: 480px;
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1440px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Typography Scale - Mobile */
+  h1 { font-size: 24px; line-height: 32px; font-weight: 700; }
+  h2 { font-size: 20px; line-height: 28px; font-weight: 600; }
+  h3 { font-size: 18px; line-height: 24px; font-weight: 600; }
+  h4 { font-size: 16px; line-height: 24px; font-weight: 600; }
+
+  /* Typography Scale - Desktop */
+  @media (min-width: 1024px) {
+    h1 { font-size: 36px; line-height: 44px; font-weight: 700; }
+    h2 { font-size: 30px; line-height: 38px; font-weight: 600; }
+    h3 { font-size: 24px; line-height: 32px; font-weight: 600; }
+    h4 { font-size: 20px; line-height: 28px; font-weight: 600; }
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  @media (min-width: 1024px) {
+    p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  /* Focus States */
+  *:focus-visible {
+    outline: 3px solid var(--primary-500);
+    outline-offset: 2px;
+    border-radius: var(--radius-md);
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ==================== BUTTONS ==================== */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full 
+           font-semibold transition-all duration-200 ease-out
+           bg-[var(--primary-600)] text-white hover:bg-[var(--primary-700)]
+           hover:-translate-y-0.5 active:translate-y-0;
+    box-shadow: var(--shadow-primary);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.32);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full 
+           font-semibold transition-all duration-200 ease-out
+           bg-[var(--primary-50)] text-[var(--primary-700)] border-2 border-[var(--primary-200)]
+           hover:bg-[var(--primary-100)] hover:border-[var(--primary-300)];
+  }
+
+  .btn-success {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full 
+           font-semibold transition-all duration-200 ease-out text-white
+           hover:-translate-y-0.5 active:translate-y-0;
+    background: linear-gradient(135deg, var(--success-500) 0%, var(--success-600) 100%);
+    box-shadow: var(--shadow-success);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full 
+           font-semibold transition-all duration-200 ease-out
+           bg-transparent text-[var(--gray-700)] border-2 border-[var(--gray-300)]
+           hover:bg-[var(--gray-50)] hover:border-[var(--gray-400)];
+  }
+
+  .btn-disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+
+  /* Button Sizes */
+  .btn-sm {
+    @apply px-4 py-2;
+    font-size: 14px;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4;
+    font-size: 18px;
+  }
+
+  /* ==================== QUEST CARDS ==================== */
+  .quest-card {
+    @apply bg-white rounded-[24px] border-2 border-[var(--gray-100)]
+           transition-all duration-300 ease-in-out;
+    padding: var(--space-6);
+  }
+
+  .quest-card:hover {
+    @apply border-[var(--primary-300)] -translate-y-1;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .quest-card__icon {
+    @apply flex items-center justify-center rounded-xl;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .quest-card--video .quest-card__icon {
+    background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);
+  }
+
+  .quest-card--reading .quest-card__icon {
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  }
+
+  .quest-card--audio .quest-card__icon {
+    background: linear-gradient(135deg, #14B8A6 0%, #0F766E 100%);
+  }
+
+  .quest-card--practice .quest-card__icon {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  }
+
+  .quest-card--social .quest-card__icon {
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  }
+
+  /* Quest icon variants for Admin Panel */
+  .quest-icon--video {
+    background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);
+  }
+
+  .quest-icon--reading {
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  }
+
+  .quest-icon--audio {
+    background: linear-gradient(135deg, #14B8A6 0%, #0F766E 100%);
+  }
+
+  .quest-icon--practice {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  }
+
+  .quest-icon--social {
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  }
+
+  /* ==================== BADGES ==================== */
+  .badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full uppercase tracking-wider
+           font-semibold;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .badge--xp {
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+    @apply text-[var(--gray-900)];
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.32);
+  }
+
+  .badge--streak {
+    @apply bg-[var(--error-50)] text-[var(--error-700)] border-[1.5px] border-[var(--error-300)];
+  }
+
+  .badge--level {
+    @apply bg-[var(--primary-600)] text-white;
+  }
+
+  .badge--success {
+    @apply bg-[var(--success-50)] text-[var(--success-700)] border-[1.5px] border-[var(--success-300)];
+  }
+
+  .badge--primary {
+    @apply bg-[var(--primary-50)] text-[var(--primary-700)] border-[1.5px] border-[var(--primary-300)];
+  }
+
+  .badge--gray {
+    @apply bg-[var(--gray-100)] text-[var(--gray-700)] border-[1.5px] border-[var(--gray-300)];
+  }
+
+  .badge--common {
+    @apply bg-[var(--gray-100)] text-[var(--gray-700)];
+  }
+
+  .badge--rare {
+    @apply bg-[var(--primary-100)] text-[var(--primary-700)];
+  }
+
+  .badge--epic {
+    @apply bg-[var(--secondary-100)] text-[var(--secondary-700)];
+  }
+
+  .badge--legendary {
+    background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+    @apply text-[var(--secondary-900)];
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+  }
+
+  /* ==================== ANIMATIONS ==================== */
+  @keyframes celebrate {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    10% { transform: scale(1.1) rotate(-5deg); }
+    20% { transform: scale(1.1) rotate(5deg); }
+    30% { transform: scale(1.05) rotate(-3deg); }
+    40% { transform: scale(1.05) rotate(3deg); }
+    50% { transform: scale(1) rotate(0deg); }
+  }
+
+  @keyframes streak-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  }
+
+  @keyframes xp-gain {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(-40px) scale(0.8); opacity: 0; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to { 
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-celebrate {
+    animation: celebrate 0.6s var(--ease-bounce);
+  }
+
+  .animate-streak-pulse {
+    animation: streak-pulse 2s infinite;
+  }
+
+  .animate-xp-gain {
+    animation: xp-gain 1s var(--ease-out) forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s var(--ease-out);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
