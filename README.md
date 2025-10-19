@@ -10,30 +10,35 @@ Uma plataforma moderna e interativa de gamificação construída com **React**, 
 ## 🌟 Características Principais
 
 ### 📊 Dashboard Interativo
+
 - **Sistema de Níveis**: Progressão dinâmica com indicadores visuais
 - **Stats em Tempo Real**: Estatísticas de performance do usuário
 - **Badges Colecionáveis**: Sistema completo de conquistas e troféus
 - **Notificações Contextuais**: Feedback imediato das ações do usuário
 
 ### 🎯 Sistema de Quests & Desafios
+
 - **Quests Variadas**: Diferentes tipos de missões (diárias, semanais, especiais)
 - **Desafios Semanais**: Sistema de challenge progressivo
 - **Dificuldade Adaptável**: Níveis de dificuldade customizáveis
 - **Rastreamento de Progresso**: Acompanhamento detalhado do progresso
 
 ### 🗺️ Roadmap Visual
+
 - **Mapa Interativo**: Visualização de progressão em tempo real
 - **Regiões Temáticas**: Organização de conteúdo por regiões
 - **Pontos de Interesse**: Marcos e milestones ao longo do roadmap
 - **Animações Suaves**: Transições fluidas entre estados
 
 ### 👤 Perfil de Usuário
+
 - **Editor de Perfil**: Personalização completa de dados
 - **Histórico de Conquistas**: Visualização de badges e medalhas
 - **Estatísticas Pessoais**: Métricas detalhadas de desempenho
 - **Preferências de Usuário**: Customização de experiência
 
 ### ⚙️ Painel Administrativo (Admin Panel)
+
 - **CRUD Completo**: Gerenciamento de Quests, Badges, Regiões e Desafios
 - **Gestão de Usuários**: Controle e monitoramento de usuários
 - **Editor de Conteúdo**: Interface intuitiva para criação e edição
@@ -42,6 +47,7 @@ Uma plataforma moderna e interativa de gamificação construída com **React**, 
 ## 🛠️ Stack Técnico
 
 ### Frontend
+
 - **React 18.3.1** - UI Library moderna
 - **TypeScript** - Type safety e melhor DX
 - **Tailwind CSS** - Styling utilitário
@@ -50,22 +56,25 @@ Uma plataforma moderna e interativa de gamificação construída com **React**, 
 - **Recharts** - Gráficos e visualizações
 
 ### Ferramentas de Desenvolvimento
+
 - **Vite** - Build tool ultra-rápido
 - **React Hook Form** - Gerenciamento de formulários
 - **Sonner** - Toast notifications
 - **Embla Carousel** - Carrossel responsivo
 
 ### Backend & Banco de Dados
+
 - **Supabase** - Backend como serviço (Auth, DB, Storage)
 - **PostgreSQL** - Banco de dados relacional
 
 ### Deployment
+
 - **Dokploy** - Gerenciador de VPS e deployment
 - **Docker** - Containerização da aplicação
 
 ## 📋 Pré-requisitos
 
-- **Node.js**: v18+ 
+- **Node.js**: v18+
 - **npm** ou **yarn**
 - **Git**: Para versionamento
 - **Conta Supabase**: Para backend e autenticação
@@ -74,23 +83,27 @@ Uma plataforma moderna e interativa de gamificação construída com **React**, 
 ## 🚀 Instalação Local
 
 ### 1. Clonar o Repositório
+
 ```bash
 git clone https://github.com/LuciSantiago/gamification-platform.git
 cd gamification-platform
 ```
 
 ### 2. Instalar Dependências
+
 ```bash
 npm install
 ```
 
 ### 3. Configurar Variáveis de Ambiente
+
 ```bash
 # Criar arquivo .env.local
 cp .env.example .env.local
 ```
 
 Configure as variáveis necessárias:
+
 ```env
 VITE_SUPABASE_URL=https://seu-projeto.supabase.co
 VITE_SUPABASE_ANON_KEY=sua-chave-anonima
@@ -98,6 +111,7 @@ VITE_API_URL=http://localhost:3000
 ```
 
 ### 4. Iniciar Servidor de Desenvolvimento
+
 ```bash
 npm run dev
 ```
@@ -107,11 +121,13 @@ A aplicação estará disponível em `http://localhost:5173`
 ## 📦 Build para Produção
 
 ### Build Local
+
 ```bash
 npm run build
 ```
 
 ### Preview do Build
+
 ```bash
 npm run preview
 ```
@@ -138,6 +154,7 @@ src/
 ## 🎮 Funcionalidades Implementadas
 
 ### ✅ Sistema de Gamificação
+
 - [x] Sistema de níveis com progressão
 - [x] Badges e conquistas colecionáveis
 - [x] Quests com diferentes tipos e dificuldades
@@ -146,6 +163,7 @@ src/
 - [x] Histórico de atividades
 
 ### ✅ Interface Interativa
+
 - [x] Dashboard responsivo
 - [x] Animações fluidas
 - [x] Notificações contextuais
@@ -154,12 +172,14 @@ src/
 - [x] Gráficos e estatísticas
 
 ### ✅ Gerenciamento de Dados
+
 - [x] Persistência com localStorage
 - [x] Integração Supabase-ready
 - [x] Validações em tempo real
 - [x] CRUD completo no admin panel
 
 ### ✅ UX/Accessibility
+
 - [x] Design responsivo
 - [x] Componentes acessíveis (Radix UI)
 - [x] Tema escuro/claro
@@ -170,6 +190,7 @@ src/
 ### Próximas Etapas para Produção
 
 1. **Criar Tabelas no Supabase**:
+
    ```sql
    -- Tabela de Usuários (estendida)
    CREATE TABLE users (
@@ -210,6 +231,7 @@ src/
    ```
 
 2. **Configurar Autenticação**:
+
    - Habilitar Authentication no Supabase
    - Configurar OAuth providers (Google, GitHub)
    - Configurar email/password authentication
@@ -221,7 +243,9 @@ src/
 ## 🐳 Deploy com Dokploy
 
 ### 1. Preparar Docker
+
 Crie um `Dockerfile` na raiz:
+
 ```dockerfile
 FROM node:18-alpine AS builder
 WORKDIR /app
@@ -240,6 +264,7 @@ CMD ["npm", "run", "preview"]
 ```
 
 ### 2. Configurar no Dokploy
+
 1. Conectar repositório GitHub
 2. Configurar variáveis de ambiente
 3. Ativar auto-deploy na branch `main`
@@ -247,6 +272,7 @@ CMD ["npm", "run", "preview"]
 5. Ativar SSL/HTTPS
 
 ### 3. Deploy
+
 ```bash
 git push origin main
 # Dokploy acionará o build e deploy automaticamente
@@ -289,6 +315,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 👨‍💻 Autor
 
 **Lucia Santiago**
+
 - GitHub: [@LuciSantiago](https://github.com/LuciSantiago)
 - Email: lucia@example.com
 
@@ -297,4 +324,3 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 <p align="center">
   Desenvolvido com ❤️ para criar experiências gamificadas incríveis
 </p>
-  

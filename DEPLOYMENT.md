@@ -49,25 +49,30 @@ VITE_ENV=production
 ### Opção A: Via Dokploy UI (Recomendado)
 
 1. **Acesse o painel Dokploy**
+
    - URL: `https://seu-vps-ip:3000`
    - Faça login com suas credenciais
 
 2. **Crie um novo projeto**
+
    - Clique em "New Project"
    - Nome: "Gamification Platform"
    - Descrição: "Plataforma de Gamificação com React + Supabase"
 
 3. **Configure o repositório**
+
    - Conecte sua conta GitHub
    - Selecione: `LuciSantiago/gamification-platform`
    - Branch: `main`
    - Dockerfile: `/Dockerfile`
 
 4. **Configure variáveis de ambiente**
+
    - Adicione as variáveis do `.env.example`
    - Salve as configurações
 
 5. **Configure o domínio**
+
    - Adicione seu domínio customizado
    - Ative SSL/HTTPS automático
 
@@ -78,7 +83,7 @@ VITE_ENV=production
 ### Opção B: Via Docker Compose (Manual)
 
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   gamification-app:
@@ -102,6 +107,7 @@ networks:
 ```
 
 **Para rodar:**
+
 ```bash
 docker-compose up -d
 ```
@@ -251,6 +257,7 @@ CREATE POLICY "Users can read own progress"
 2. Crie dois buckets:
 
 **Bucket 1: badges**
+
 - Policies:
   ```
   SELECT: Public (leitura pública)
@@ -258,6 +265,7 @@ CREATE POLICY "Users can read own progress"
   ```
 
 **Bucket 2: avatars**
+
 - Policies:
   ```
   SELECT: Public
@@ -267,6 +275,7 @@ CREATE POLICY "Users can read own progress"
 ## 🌐 Passo 4: Configurar SSL/HTTPS
 
 ### Via Dokploy:
+
 1. Vá para **Settings** > **Domain**
 2. Adicione seu domínio customizado
 3. Ative "Auto SSL Certificate" (Let's Encrypt)
@@ -275,6 +284,7 @@ CREATE POLICY "Users can read own progress"
 ## 🔄 Passo 5: Configurar Auto-Deploy
 
 ### No Dokploy:
+
 1. Vá para **Project Settings**
 2. Em **Auto Deploy**:
    - Ative "Auto Deploy on Push"
@@ -282,6 +292,7 @@ CREATE POLICY "Users can read own progress"
 3. Salve
 
 Agora, sempre que você fazer push na branch `main`, o Dokploy irá:
+
 1. Clonar o repositório
 2. Instalar dependências
 3. Fazer build do Docker
@@ -352,22 +363,26 @@ free -h
 ## 🔒 Segurança
 
 ### 1. Backup Automático do Supabase
+
 ```sql
 -- Ativar backup no Supabase Dashboard
 -- Settings > Backup > Enable Daily Backups
 ```
 
 ### 2. Variáveis de Ambiente Seguras
+
 - Nunca commite `.env.local`
 - Use `.gitignore` (já configurado)
 - Configure secrets no Dokploy
 
 ### 3. Certificados SSL
+
 - Renovação automática via Let's Encrypt
 - Válido por 90 dias
 - Dokploy renova automaticamente
 
 ### 4. Atualizações de Segurança
+
 ```bash
 # Na VPS, execute regularmente:
 sudo apt update && sudo apt upgrade -y
@@ -377,6 +392,7 @@ docker pull node:18-alpine
 ## 🚨 Troubleshooting
 
 ### Problema: "Connection refused"
+
 ```bash
 # Verificar se porta 3000 está aberta
 sudo ufw allow 3000
@@ -386,6 +402,7 @@ sudo ufw status
 ```
 
 ### Problema: "Build failed"
+
 ```bash
 # Verificar logs do Docker
 docker logs container-id
@@ -395,6 +412,7 @@ docker system prune -a
 ```
 
 ### Problema: "Variáveis de ambiente não funcionam"
+
 ```bash
 # Verificar no Dokploy UI
 # Settings > Environment Variables
@@ -408,10 +426,12 @@ docker-compose up --build
 ### Otimizações Recomendadas
 
 1. **CDN para Assets Estáticos**
+
    - Configurar Cloudflare
    - Cachear imagens e CSS
 
 2. **Compressão**
+
    - Nginx/Apache com gzip
    - Minificação de assets
 
